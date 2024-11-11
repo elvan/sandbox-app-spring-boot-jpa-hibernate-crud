@@ -1,5 +1,7 @@
 package com.github.elvan.jpacruddemo;
 
+import java.util.List;
+
 import com.github.elvan.jpacruddemo.dao.StudentDAO;
 import com.github.elvan.jpacruddemo.entity.Student;
 import org.springframework.boot.CommandLineRunner;
@@ -21,8 +23,20 @@ public class JpaCrudDemoApplication {
 
       // createMultipleStudents(studentDAO);
 
-      readStudent(studentDAO);
+      // readStudent(studentDAO);
+
+      queryForStudents(studentDAO);
     };
+  }
+
+  private void queryForStudents(StudentDAO studentDAO) {
+    // get a list of students
+    List<Student> theStudents = studentDAO.findAll();
+
+    // display list of students
+    for (Student tempStudent : theStudents) {
+      System.out.println(tempStudent);
+    }
   }
 
   private void readStudent(StudentDAO studentDAO) {

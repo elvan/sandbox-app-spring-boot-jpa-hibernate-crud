@@ -33,7 +33,7 @@ public class JpaCrudDemoApplication {
 
       // deleteStudent(studentDAO);
 
-      deleteAllStudents(studentDAO);
+      // deleteAllStudents(studentDAO);
     };
   }
 
